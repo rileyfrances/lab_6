@@ -1,39 +1,48 @@
 #include "player.h"
 #include <iostream>
 
- Player::Player();{
+ Player::Player(){
     name= "Hero";
     health=100;
     maxHealth=100;
     attackPower=10;
 
  };
-    Player(std::string name, int health, int attackPower){
-    this->name=name;
-    this-> health=health;
-    this->maxHealth=maxHealth;
-    this->attackPower=attackPower;
+    Player::Player(std::string name, int health, int attackPower){
+    this -> name=name;
+    this -> health=health;
+    this -> maxHealth=maxHealth;
+    this -> attackPower=attackPower;
+    this -> maxHealth=health;
 
     }
-    Player::
+
+    Player::~Player(){
+        std::cout<<"The object for Player" <<name<<" has been destroyed"<<std::endl;
+    }
+    
         
 
     std::string Player::getName()const{
+        return name;
 
     }
     int Player::getHealth()const{
 
+        return health;
     }
     int Player::getMaxHealth()const{
+        return maxHealth;
 
     }
     int Player::getAttackPower()const{
+        return attackPower;
 
     }
 
     void Player::takeDamage(int damage){
         if(damage>health){
-            health=0
+            health=0;
         } else{
             health -=damage;
         }
@@ -42,5 +51,5 @@
         }
     }
     void Player::displayStatus(){
-        std::cour<<name<<" - HP: "<<health<<"/"<<maxHealth<<std::endl;
+        std::cout<<name<<" - HP: "<<health<<"/"<<maxHealth<<std::endl;
     }

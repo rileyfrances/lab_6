@@ -10,14 +10,19 @@ class Player{
     int maxHealth;
     int attackPower;
 public:
+    //constructors
     Player();
     Player(std::string name, int health, int attackPower);
 
+    ~Player();
+
+    //getters
     std::string getName()const;
     int getHealth()const;
     int getMaxHealth()const;
     int getAttackPower()const;
 
+    //acutal functions
     void takeDamage(int damage);
     void displayStatus();
 };
