@@ -1,19 +1,21 @@
 #include "player.h"
 #include <iostream>
 
- Player::Player(){
+ Player::Player() : inventory(10){
     name= "Hero";
     health=100;
     maxHealth=100;
     attackPower=10;
+    
 
- };
+ }
     Player::Player(std::string name, int health, int attackPower){
     this -> name=name;
     this -> health=health;
     this -> maxHealth=maxHealth;
     this -> attackPower=attackPower;
     this -> maxHealth=health;
+    
 
     }
 
@@ -52,4 +54,10 @@
     }
     void Player::displayStatus(){
         std::cout<<name<<" - HP: "<<health<<"/"<<maxHealth<<std::endl;
+    }
+     void Player::showInventory() const;{
+        inventory.dispay();
+     }
+    void Player::addItem(const Item& item);{
+        inventory.addItem(item);
     }
