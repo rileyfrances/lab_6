@@ -4,15 +4,15 @@ using namespace std;
 int main(){
     Player Hero;
 
-    Item sword(Sword, 50);
-    Item bonnet(Bonnet, 150);
-    Item boots(Boots,10);
+    Item sword("Sword", 50);
+    Item bonnet("Bonnet", 150);
+    Item boots("Boots",10);
     Item junk;
 
-    hero.addItem(sword);
-    hero.addItem(bonnet);
-    hero.addItem(boots);
-    hero.addItem(junk);
+    Hero.addItem(sword);
+    Hero.addItem(bonnet);
+    Hero.addItem(boots);
+    Hero.addItem(junk);
 
     cout<<" The total number of items is "<<Item::getTotalItems()<<endl;
 

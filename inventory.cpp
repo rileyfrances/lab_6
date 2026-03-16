@@ -1,20 +1,20 @@
-#include"inventory.h
+#include"inventory.h"
 #include<iostream>
 
 
-Inventory::Inventory(int capacity);{
+Inventory::Inventory(int capacity){
     this-> capacity=capacity;
     this-> itemCount=0;
     this-> items= new Item[capacity];
 }
-Inventory::~Inventory();{
-    delete items;
+Inventory::~Inventory(){
+    delete[] items;
 
 }
-bool Inventory::addItem(const Item& item);{
+bool Inventory::addItem(const Item& item){
     if (itemCount<capacity){
         items[itemCount]=item;
-        incrementTotalItems() 
+        Item::incrementTotalItems(); 
         cout<< "An item was added: ["<<item.getName()<<"]"<<endl;
         itemCount += 1;
         return true;
@@ -23,7 +23,7 @@ bool Inventory::addItem(const Item& item);{
         return false;
     }
 }
-void Inventory::display() const;{
-    cout<<"The inventory has"<<itemCount<<" items."<<getValue()<<"]"<<endl;
+void Inventory::display() const{
+    cout<<"The inventory has"<<itemCount<<" items."<<"]"<<endl;
     return;
 }

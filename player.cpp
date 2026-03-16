@@ -9,7 +9,7 @@
     
 
  }
-    Player::Player(std::string name, int health, int attackPower){
+    Player::Player(std::string name, int health, int attackPower): inventory(10){
     this -> name=name;
     this -> health=health;
     this -> maxHealth=maxHealth;
@@ -55,9 +55,9 @@
     void Player::displayStatus(){
         std::cout<<name<<" - HP: "<<health<<"/"<<maxHealth<<std::endl;
     }
-     void Player::showInventory() const;{
-        inventory.dispay();
+     void Player::showInventory() const{
+        inventory.display();
      }
-    void Player::addItem(const Item& item);{
+    void Player::addItem(const Item& item){
         inventory.addItem(item);
     }

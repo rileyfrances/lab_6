@@ -2,14 +2,14 @@
  
  int Item::totalItems=0;
 
- Item::Item(std::string name, int value){
-        this-> name=name;
+ Item::Item(std::string newName, int value){
+        this-> name=newName;
         this->value=value;
  }
-int Item::getTotalItems();{
+int Item::getTotalItems(){
     return totalItems;
 }
-void Item::incrementTotalItems();{
+void Item::incrementTotalItems(){
     totalItems += 1;
 }
  
